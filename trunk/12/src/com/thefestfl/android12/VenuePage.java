@@ -4,11 +4,13 @@
  * 
  */
 
-package com.thefestfl.android11;
+package com.thefestfl.android12;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import com.thefestfl.android12.R;
 
 import android.app.ListActivity;
 import android.content.Context;
@@ -60,9 +62,10 @@ public class VenuePage extends ListActivity {
       	
         	String showday = new String();
         	switch(c.getInt(1)){
-        	case 1: showday = "Friday"; break;
-        	case 2: showday = "Saturday"; break;
-        	case 3: showday = "Sunday"; break;
+        	case 1: showday = "Thursday"; break;
+        	case 2: showday = "Friday"; break;
+        	case 3: showday = "Saturday"; break;
+        	case 4: showday = "Sunday"; break;
         	}
         	
         	String bandname = c.getString(0).replace("#", "'");

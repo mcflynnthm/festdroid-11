@@ -1,7 +1,9 @@
-package com.thefestfl.android11;
+package com.thefestfl.android12;
 
 import java.util.Arrays;
 import java.util.Comparator;
+
+import com.thefestfl.android12.R;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -35,6 +37,12 @@ public class Scheduler extends TabActivity {
 	    tabHost.addTab(spec);
 
 	    // Do the same for the other tabs
+	    intent = new Intent().setClass(this, SchedThur.class);
+	    spec = tabHost.newTabSpec("thursday").setIndicator("Thursday",
+	                      res.getDrawable(R.drawable.ic_tab_artists))
+	                  .setContent(intent);
+	    tabHost.addTab(spec);
+	    
 	    intent = new Intent().setClass(this, SchedFri.class);
 	    spec = tabHost.newTabSpec("friday").setIndicator("Friday",
 	                      res.getDrawable(R.drawable.ic_tab_artists))

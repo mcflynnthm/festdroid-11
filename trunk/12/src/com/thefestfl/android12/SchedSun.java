@@ -1,7 +1,9 @@
-package com.thefestfl.android11;
+package com.thefestfl.android12;
 
 import java.util.Arrays;
 import java.util.Comparator;
+
+import com.thefestfl.android12.R;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
@@ -53,9 +55,10 @@ public class SchedSun extends ListActivity implements OnItemClickListener {
 			String showday = new String();
 			int day = f.getInt(1);
 			switch(day){
-			case 1: showday = "Friday"; break;
-			case 2: showday = "Saturday"; break;
-			case 3: showday = "Sunday"; break;
+			case 1: showday = "Thursday"; break;
+			case 2: showday = "Friday"; break;
+			case 3: showday = "Saturday"; break;
+			case 4: showday = "Sunday"; break;
 			}
 			
 			if(showday.equals("Sunday")){
@@ -83,15 +86,17 @@ public class SchedSun extends ListActivity implements OnItemClickListener {
 			@Override
 			public int compare (String entry1, String entry2){
 				int day1, day2;
-				if(entry1.contains("Friday")) day1 = 1;
-				else if (entry1.contains("Saturday")) day1 = 2;
+				if(entry1.contains("Friday")) day1 = 2;
+				else if (entry1.contains("Thursday")) day1 = 1;
+				else if (entry1.contains("Saturday")) day1 = 3;
 //				else if (entry1.contains("Mon ")) day1 = 4;
-				else day1 = 3;
+				else day1 = 4;
 				
-				if(entry2.contains("Friday")) day2 = 1;
-				else if (entry2.contains("Saturday")) day2 = 2;
+				if(entry2.contains("Friday")) day2 = 2;
+				else if (entry2.contains("Saturday")) day2 = 3;
+				else if (entry2.contains("Thursday")) day2 = 1;
 //				else if (entry2.contains("Mon ")) day2 = 4;
-				else day2 = 3;
+				else day2 = 4;
 				
 				if (day1 < day2) return -1; else if (day2 < day1) return 1; else {
 					

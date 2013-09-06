@@ -1,4 +1,4 @@
-package com.thefestfl.android11;
+package com.thefestfl.android12;
 
 import java.util.List;
 
@@ -12,6 +12,7 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
 import com.google.android.maps.MyLocationOverlay;
+import com.thefestfl.android12.R;
 
 public class FestMap extends MapActivity {
 

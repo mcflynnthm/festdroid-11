@@ -5,7 +5,7 @@
  * 
  */
 
-package com.thefestfl.android11;
+package com.thefestfl.android12;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,6 +15,8 @@ import java.net.URL;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
+
+import com.thefestfl.android12.R;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -244,7 +246,7 @@ public class TheFest10 extends Activity implements OnClickListener{
     	 */
     	
     	try{
-    		xUrl = new URL("http://johnrflynn.com/fest11/shows.xml");
+    		xUrl = new URL("http://johnrflynn.com/fest12/shows.xml");
     	} catch (MalformedURLException e){
     		Log.e("ParseXML", "Something wrong with the show XML URL");
     		xUrl = null;
@@ -409,7 +411,7 @@ public class TheFest10 extends Activity implements OnClickListener{
     	try {
     	    // Create a URL for the desired page
 //    		URL url = new URL("http://robmcw.com/thefest11/thefest.xml");
-    	    URL url = new URL("http://johnrflynn.com/fest11/thefest.xml");
+    	    URL url = new URL("http://johnrflynn.com/fest12/thefest.xml");
     		
     	    parser.setInput(new InputStreamReader(url.openStream()));
 
@@ -432,7 +434,7 @@ public class TheFest10 extends Activity implements OnClickListener{
     	}
     	
     	
-    	prefs = getSharedPreferences("Fest11Band", MODE_PRIVATE);
+    	prefs = getSharedPreferences("Fest12Band", MODE_PRIVATE);
 		SharedPreferences.Editor editor = prefs.edit();
 		editor.putBoolean("runOnce", true);
 		editor.putString("version", ""+ver);
@@ -455,7 +457,7 @@ public class TheFest10 extends Activity implements OnClickListener{
     	    // Create a URL for the desired page
     		
 //    		URL url = new URL("http://robmcw.com/thefest11/thefest.xml");
-    	    URL url = new URL("http://johnrflynn.com/fest11/thefest.xml");
+    	    URL url = new URL("http://johnrflynn.com/fest12/thefest.xml");
     		
     	    parser.setInput(new InputStreamReader(url.openStream()));
 
@@ -479,7 +481,7 @@ public class TheFest10 extends Activity implements OnClickListener{
     	} catch (IOException e) {
     	}
     	
-    	SharedPreferences prefs = getSharedPreferences("Fest11Band", MODE_PRIVATE);
+    	SharedPreferences prefs = getSharedPreferences("Fest12Band", MODE_PRIVATE);
     	int localver = Integer.parseInt(prefs.getString("version", "0"));
     	Log.i("Local", ""+localver);
     	Log.i("Remote", ""+ver);
@@ -513,7 +515,7 @@ public class TheFest10 extends Activity implements OnClickListener{
             	
                 while (mProgressStatus < 100) {
                     try {
-						mProgressStatus = ParseXML("http://johnrflynn.com/fest11/bands.xml");
+						mProgressStatus = ParseXML("http://johnrflynn.com/fest12/bands.xml");
 //						mProgressStatus = ParseXML("http://robmcw.com/thefest11/bands.xml");
 
 					} catch (XmlPullParserException e) {

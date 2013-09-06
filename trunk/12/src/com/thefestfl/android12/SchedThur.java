@@ -1,21 +1,31 @@
-package com.thefestfl.android11;
+package com.thefestfl.android12;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
+
+import org.xmlpull.v1.XmlPullParserException;
+
+import com.thefestfl.android12.R;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
-public class SchedSat extends ListActivity implements OnItemClickListener {
+public class SchedThur extends ListActivity implements OnItemClickListener {
 	Context mCtx;
 	String[] shows;
 	int[] pos;
@@ -44,21 +54,23 @@ public class SchedSat extends ListActivity implements OnItemClickListener {
 		
 		// Here I need to not just make an array of Strings, but something ordered
 		// by the date-time of the show. Ugh.
-		for(int x = 0; x< c.getCount(); x++){
+		for(int x = 0; x < c.getCount(); x++){
 			Cursor f = fest.fetchShowById(c.getInt(0));
 			f.moveToFirst();
 			shows[count] = f.getString(0);
 			if(shows[count].contains("#")) shows[count] = shows[count].replace("#", "'");
 			
-			String showday = new String();
+        	String showday = new String();
 			int day = f.getInt(1);
 			switch(day){
-			case 1: showday = "Friday"; break;
-			case 2: showday = "Saturday"; break;
-			case 3: showday = "Sunday"; break;
+			case 1: showday = "Thursday"; break;
+			case 2: showday = "Friday"; break;
+			case 3: showday = "Saturday"; break;
+			case 4: showday = "Sunday"; break;
 			}
-			
-			if(showday.equals("Saturday")){
+        	
+			if(showday.equals("Friday")){
+				
 				shows[count] = c.getInt(1)+"<"+shows [count]+"\n"+f.getString(2) +"\n"+showday+" "+f.getString(3); 
 				shows[count] = shows[count].replace("#", "'");
 				count++;
@@ -83,15 +95,17 @@ public class SchedSat extends ListActivity implements OnItemClickListener {
 			@Override
 			public int compare (String entry1, String entry2){
 				int day1, day2;
-				if(entry1.contains("Friday")) day1 = 1;
-				else if (entry1.contains("Saturday")) day1 = 2;
+				if(entry1.contains("Friday")) day1 = 2;
+				else if (entry1.contains("Thursday")) day1 = 1;
+				else if (entry1.contains("Saturday")) day1 = 3;
 //				else if (entry1.contains("Mon ")) day1 = 4;
-				else day1 = 3;
+				else day1 = 4;
 				
-				if(entry2.contains("Friday")) day2 = 1;
-				else if (entry2.contains("Saturday")) day2 = 2;
+				if(entry2.contains("Friday")) day2 = 2;
+				else if (entry2.contains("Saturday")) day2 = 3;
+				else if (entry2.contains("Thursday")) day2 = 1;
 //				else if (entry2.contains("Mon ")) day2 = 4;
-				else day2 = 3;
+				else day2 = 4;
 				
 				if (day1 < day2) return -1; else if (day2 < day1) return 1; else {
 					
@@ -202,5 +216,6 @@ public class SchedSat extends ListActivity implements OnItemClickListener {
 		
 		return newTime;
 	}
+	
 
 }
