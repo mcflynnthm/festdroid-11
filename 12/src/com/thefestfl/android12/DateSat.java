@@ -4,11 +4,13 @@
  * 
  */
 
-package com.thefestfl.android11;
+package com.thefestfl.android12;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import com.thefestfl.android12.R;
 
 import android.app.ListActivity;
 import android.content.Context;
@@ -20,10 +22,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
-// Activity for the Sunday tab in ByDate
+// Activity for the Saturday tab in ByDate
 
-public class DateSun extends ListActivity {
-	
+public class DateSat extends ListActivity {
 	Context mCtx;
 	int[] my;
 	
@@ -38,7 +39,7 @@ public class DateSun extends ListActivity {
         
         mCtx = this;
         
-        Cursor c = festDB.fetchDateShows(3);
+        Cursor c = festDB.fetchDateShows(2);
         c.moveToFirst();
         
         List<HashMap<String, String>> fillMaps = new ArrayList<HashMap<String, String>>();
@@ -49,7 +50,7 @@ public class DateSun extends ListActivity {
         
         for(int x = 0; x < c.getCount(); x++){
         	HashMap<String, String> map = new HashMap<String, String>();
-      	
+     	
         	String show = c.getString(0) + "\n"+ c.getString(2)+"\n" + 
      			   c.getString(3);
         	show = show.replace("#", "'");
@@ -60,6 +61,7 @@ public class DateSun extends ListActivity {
         		fillMaps.add(map);
         	}
         	c.moveToNext();
+     	
         }
         
         ms.close();
@@ -81,7 +83,7 @@ public class DateSun extends ListActivity {
     			FestDBAdapter festDB = new FestDBAdapter(mCtx);
     	        festDB.open();
     	        
-    	        Cursor c = festDB.fetchDateShows(3);    			
+    	        Cursor c = festDB.fetchDateShows(2);    			
     			c.moveToPosition(position);
     			
     			if(ms.checkShow(c.getInt(4))){
@@ -101,8 +103,8 @@ public class DateSun extends ListActivity {
     			c.close();
     		}
     	});
+        
     }
-	
 	public String fixTime(String time){
 		String newTime = new String();
 		

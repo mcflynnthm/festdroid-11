@@ -4,7 +4,9 @@
  * 
  */
 
-package com.thefestfl.android11;
+package com.thefestfl.android12;
+
+import com.thefestfl.android12.R;
 
 import android.app.ListActivity;
 import android.content.Context;
@@ -54,19 +56,18 @@ public class ByVenue extends ListActivity {
 	
 	// The venues! Aren't the wonderful, folks? And alphabetical
 	private String[] venues = new String[] {
-			"Bar 1982",
+			"1982",
 			"8 Seconds",
 			"The Atlantic",
-			"Boca Fiesta / Palamino",
-			"CMC",
+			"Boca Fiesta/Palomino",
+			"Civic Media Center",
 			"Durty Nelly's",
 			"Florida Theater of Gainesville",
-			"High Dive",
-			"The Laboratory",
 			"Loosey's",
-			"Lunchbox",
-			"Rockey's Piano Bar",
-			"The New Top Spot"
+			"The Lunchbox",
+			"Mars Pub",
+			"Rockey's",
+			"The Wooly"
 	};
     		
 }

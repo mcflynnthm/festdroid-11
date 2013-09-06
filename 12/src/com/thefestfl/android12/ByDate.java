@@ -4,7 +4,9 @@
  * 
  */
 
-package com.thefestfl.android11;
+package com.thefestfl.android12;
+
+import com.thefestfl.android12.R;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -27,9 +29,15 @@ public class ByDate extends TabActivity {
 	    Intent intent;  // Reusable Intent for each tab
 
 	    // Create an Intent to launch an Activity for the tab (to be reused)
-	    intent = new Intent().setClass(this, DateFriday.class);
+	    intent = new Intent().setClass(this, DateThursday.class);
 
 	    // Initialize a TabSpec for each tab and add it to the TabHost
+	    spec = tabHost.newTabSpec("thursday").setIndicator("Thursday",
+                res.getDrawable(R.drawable.ic_tab_artists))
+            .setContent(intent);
+	    tabHost.addTab(spec);
+	    
+	    intent = new Intent().setClass(this, DateFriday.class);
 	    spec = tabHost.newTabSpec("friday").setIndicator("Friday",
 	                      res.getDrawable(R.drawable.ic_tab_artists))
 	                  .setContent(intent);
