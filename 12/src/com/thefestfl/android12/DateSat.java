@@ -39,7 +39,7 @@ public class DateSat extends ListActivity {
         
         mCtx = this;
         
-        Cursor c = festDB.fetchDateShows(2);
+        Cursor c = festDB.fetchDateShows(3);
         c.moveToFirst();
         
         List<HashMap<String, String>> fillMaps = new ArrayList<HashMap<String, String>>();

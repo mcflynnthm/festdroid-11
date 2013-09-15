@@ -37,6 +37,7 @@
         		  android:screenOrientation="portrait">
         </activity>
         
+        <activity android:name="DateThursday" android:label="@string/app_name" android:screenOrientation="portrait"></activity>
         <activity android:name="DateFriday" android:label="@string/app_name" android:screenOrientation="portrait"></activity>
         <activity android:name="DateSat" android:label="@string/app_name" android:screenOrientation="portrait"></activity>
 		<activity android:name="DateSun" android:label="@string/app_name" android:screenOrientation="portrait"></activity>
@@ -60,7 +61,8 @@
         		  android:theme="@android:style/Theme.NoTitleBar"
         		  android:screenOrientation="portrait">
         </activity>
-            
+        
+        <activity android:name="SchedThur" android:label="@string/app_name" android:screenOrientation="portrait"></activity>
         <activity android:name="SchedFri" android:label="@string/app_name" android:screenOrientation="portrait"></activity>
         <activity android:name="SchedSat" android:label="@string/app_name" android:screenOrientation="portrait"></activity>
 		<activity android:name="SchedSun" android:label="@string/app_name" android:screenOrientation="portrait"></activity>

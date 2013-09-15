@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/fest11bgcrop"
+    android:background="@drawable/fest12bg"
     >
 
     <ImageView
@@ -13,7 +13,7 @@
         android:adjustViewBounds="true"
         android:paddingTop="20px"
         android:scaleType="centerInside"
-        android:src="@drawable/fest11header" >
+        android:src="@drawable/fest12header" >
 
 </ImageView>
     <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:id="@+id/scrollView1" android:layout_alignParentTop="true" android:layout_alignParentLeft="true">

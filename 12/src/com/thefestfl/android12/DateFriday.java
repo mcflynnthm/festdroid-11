@@ -41,7 +41,7 @@ public class DateFriday extends ListActivity {
         MySchedule ms = new MySchedule(this);
         ms.open();
         
-        Cursor c = festDB.fetchDateShows(1);
+        Cursor c = festDB.fetchDateShows(2);
         c.moveToFirst();
 //        Log.i("START ", ""+c.getCount());
         

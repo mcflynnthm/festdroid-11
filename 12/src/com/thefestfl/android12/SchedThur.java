@@ -69,7 +69,7 @@ public class SchedThur extends ListActivity implements OnItemClickListener {
 			case 4: showday = "Sunday"; break;
 			}
         	
-			if(showday.equals("Friday")){
+			if(showday.equals("Thursday")){
 				
 				shows[count] = c.getInt(1)+"<"+shows [count]+"\n"+f.getString(2) +"\n"+showday+" "+f.getString(3); 
 				shows[count] = shows[count].replace("#", "'");

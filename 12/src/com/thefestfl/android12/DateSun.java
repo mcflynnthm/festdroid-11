@@ -40,7 +40,7 @@ public class DateSun extends ListActivity {
         
         mCtx = this;
         
-        Cursor c = festDB.fetchDateShows(3);
+        Cursor c = festDB.fetchDateShows(4);
         c.moveToFirst();
         
         List<HashMap<String, String>> fillMaps = new ArrayList<HashMap<String, String>>();

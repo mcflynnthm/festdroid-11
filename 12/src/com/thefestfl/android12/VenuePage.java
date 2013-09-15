@@ -45,7 +45,7 @@ public class VenuePage extends ListActivity {
         festDB.open();
         
         if (venue.contains("'")) venue = venue.replace("'", "#");
-        Cursor c = festDB.fetchVenueShows(venue);
+        Cursor c = festDB.fetchVenueShows(venue.toUpperCase());
         c.moveToFirst();
         
         MySchedule ms = new MySchedule(this);
