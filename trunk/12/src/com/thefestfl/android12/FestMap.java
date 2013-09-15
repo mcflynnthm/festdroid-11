@@ -57,6 +57,7 @@ public class FestMap extends MapActivity {
 	    mapOverlays.add(itemizedoverlay);
 	    
 	    // Venues; find new Drawable
+	    drawable = this.getResources().getDrawable(R.drawable.smallface);
 	    itemizedoverlay = new FestMapOverlay(drawable, this);
 	    point = new GeoPoint(29651911, -82327294);
 	    overlayitem = new OverlayItem(point, "The Florida Theater of Gainesville", "Venue");
@@ -86,8 +87,8 @@ public class FestMap extends MapActivity {
 	    overlayitem = new OverlayItem(point, "Rockey's Piano Bar", "Venue");
 	    itemizedoverlay.addOverlay(overlayitem);
 	    
-	    point = new GeoPoint(29652770, -82333420);
-	    overlayitem = new OverlayItem(point, "The Laboratory", "Venue");
+	    point = new GeoPoint(29651071, -82323840);
+	    overlayitem = new OverlayItem(point, "Mars Pub", "Venue");
 	    itemizedoverlay.addOverlay(overlayitem);
 	    
 	    point = new GeoPoint(29652330, -82326750);
@@ -103,7 +104,7 @@ public class FestMap extends MapActivity {
 	    itemizedoverlay.addOverlay(overlayitem);
 	    
 	    point = new GeoPoint(2965261,-82325063);
-	    overlayitem = new OverlayItem(point, "The New Top Spot", "Venue");
+	    overlayitem = new OverlayItem(point, "The Wooly", "Venue");
 	    itemizedoverlay.addOverlay(overlayitem);
 	    
 	    point = new GeoPoint(2964943,-82324226);

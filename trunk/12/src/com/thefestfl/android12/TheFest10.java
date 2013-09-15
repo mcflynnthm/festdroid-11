@@ -50,7 +50,7 @@ public class TheFest10 extends Activity implements OnClickListener{
         setContentView(R.layout.main);
         
         mCtx = this;
-        SharedPreferences prefs = getSharedPreferences("Fest11Band", MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences("Fest12Band", MODE_PRIVATE);
 		
         boolean runOnce = prefs.getBoolean("runOnce", false);
         MySchedule ms = new MySchedule(this);
@@ -171,7 +171,7 @@ public class TheFest10 extends Activity implements OnClickListener{
     	ContentValues cv = new ContentValues();
     	ContentValues bcv = new ContentValues();
     	
-    	SharedPreferences prefs = getSharedPreferences("Fest11Band", MODE_PRIVATE);
+    	SharedPreferences prefs = getSharedPreferences("Fest12Band", MODE_PRIVATE);
     	boolean runOnce = prefs.getBoolean("runOnce", false);
     	
     	FestDBAdapter festDB = new FestDBAdapter(this);
