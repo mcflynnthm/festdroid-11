@@ -1,0 +1,1 @@
+Updated version for the 11th annual FEST in Gainesville, FL. Some significant code changes prompted a fork from the Festdroid 10 code.
